@@ -26,14 +26,14 @@ const init = () => {
             }
         });
 
-        // helpers.$window.on('popstate', function () {
-        //     if (firstLoad) {
-        //         let newPage = location.href;
-        //
-        //         if (!isAnimating && newLocation != newPage) changePage(newPage, false);
-        //     }
-        //     firstLoad = true;
-        // });
+        helpers.$window.on('popstate', function () {
+            if (firstLoad) {
+                let newPage = location.href;
+
+                if (!isAnimating && newLocation != newPage) changePage(newPage, false);
+            }
+            firstLoad = true;
+        });
 
         function changePage(url, bool) {
             isAnimating = true;
