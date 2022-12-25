@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" class="csstransitions">
+<head>
+    <meta charset="UTF-8">
+    <title>Page 2</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .header {
+            left: 0;
+            right: 0;
+            top: 0;
+            z-index: 2100;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            color: #171717;
+            background: rgba(183, 183, 183, 0.5);
+        }
+
+        .ajax-link {
+            padding: 0 20px;
+        }
+
+        .cd-cover-layer {
+            position: fixed;
+            z-index: 5000;
+            left: 50%;
+            top: 50%;
+            bottom: auto;
+            right: auto;
+            transform: translateX(-50%) translateY(-50%);
+            height: 101%;
+            width: 101%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .6s 0s,visibility 0s .4s;
+            background: white;
+        }
+
+        .page-is-changing .cd-cover-layer{
+            opacity:1;
+            visibility:visible;
+            transition:opacity .3s .3s,visibility 0s 0s
+        }
+    </style>
+</head>
+<body>
+<div class="cd-cover-layer"></div>
+<main>
+    <div class="cd-main-content ">
+        <header class="header"><a class="ajax-link" data-type="page-transition" href="/index.html">index</a>
+            <a class="ajax-link is-active" data-type="page-transition" href="/page-1">level-1</a>
+            <a class="ajax-link" data-type="page-transition" href="/page-2">level-2</a>
+        </header>
+        <section><h1> Page 2</h1></section>
+    </div>
+</main>
+
+<script
+        src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+        crossorigin="anonymous"></script>
+<script src="../scripts.js"></script>
+</body>
+</html>
